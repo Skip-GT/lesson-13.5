@@ -10,11 +10,14 @@ api = ""
 bot = Bot(token = api)
 dp = Dispatcher(bot, storage= MemoryStorage())
 
-kb = ReplyKeyboardMarkup()
-button = KeyboardButton(text = 'Расчитать')
-button2 = KeyboardButton(text = 'Информация')
-kb.add(button)
-kb.add(button2)
+kb = ReplyKeyboardMarkup(
+    keyboard=[
+        [KeyboardButton(text = 'Расчитать') ],
+        [
+            KeyboardButton(text = 'Информация')
+        ]
+    ], resize_keyboard = True
+)
 
 
 class UserState(StatesGroup):
